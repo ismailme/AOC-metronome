@@ -1,6 +1,6 @@
-package metronome.Receiver;
+package src.main.java.metronome.Receiver;
 
-import metronome.Invoker.Moteur;
+import src.main.java.metronome.Invoker.Moteur;
 
 /**
  * 

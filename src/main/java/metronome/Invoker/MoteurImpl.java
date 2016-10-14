@@ -1,7 +1,7 @@
-package metronome.Invoker;
+package src.main.java.metronome.Invoker;
 
-import metronome.Command.Command;
-import metronome.Command.UpdatTempo;
+import src.main.java.metronome.Command.Command;
+import src.main.java.metronome.Command.UpdatTempo;
 
 import java.util.*;
 

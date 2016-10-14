@@ -1,4 +1,4 @@
-package metronome.Command;
+package src.main.java.metronome.Command;
 
 /**
  * Created by MELLALI on 14/10/2016.
