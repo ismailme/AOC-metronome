@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AOC-metronome.iml" filepath="$PROJECT_DIR$/AOC-metronome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Metronome/maven.iml" filepath="$PROJECT_DIR$/Metronome/maven.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package Receiver;
+package metronome.Receiver;
 
 import metronome.Invoker.Moteur;
 
