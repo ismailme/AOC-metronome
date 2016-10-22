@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/IdeaProjects/AOC-metronome/Metronome/maveb.iml" filepath="$USER_HOME$/IdeaProjects/AOC-metronome/Metronome/maveb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AOC-metronome.iml" filepath="$PROJECT_DIR$/AOC-metronome.iml" />
     </modules>
   </component>
 </project>

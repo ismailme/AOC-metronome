@@ -35,25 +35,25 @@ public interface Moteur {
      * Retourne le temps par mesure
      * @return le temps par mesure
      */
-    public Integer getNbrTempo();
+    public int getNbrTempo();
 
     /**
      * Met a jour le temps par mesur
      * @param n : le  temps par mesure
      */
-    public void setNbrTempo(Integer n);
+    public void setNbrTempo(int n);
 
     /**
      * On ou Off le MoteurMetronom
      * @param m : etat du MoteurMetronome
      */
-    public void setEnMarche(Boolean m);
+    public void setEnMarche(boolean m);
 
     /**
      * Retourne l'etat du MoteurMetronome
      * @return l'etat du MoteurMetronome
      */
-    public Boolean getEnMarche();
+    public boolean getEnMarche();
 
     /**
      * Met a jour la commande permettant de marquer le temps

@@ -18,4 +18,22 @@ public class CtrlImp implements Ctrl {
     public void UpdateTempo(Moteur m) {
 
     }
+
+    public void marquerTemps() {
+        // TODO
+    }
+
+    public void marquerMesure() {
+        // TODO
+    }
+
+    public void IncrTempo(){
+        // TODO
+    }
+
+    public void DecrTempo(){
+        // TODO
+    }
+
+
 }

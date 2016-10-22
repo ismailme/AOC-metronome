@@ -3,7 +3,7 @@ package src.main.java.metronome.Invoker;
 import src.main.java.metronome.Command.Command;
 import src.main.java.metronome.Command.UpdatTempo;
 
-import java.util.*;
+
 
 /**
  * 
@@ -24,7 +24,7 @@ public class MoteurImpl implements Moteur {
     /**
      * L'etat du Moteur
      */
-    private Boolean etat;
+    private boolean etat;
 
     /**
      * La valeur du Tempo
@@ -47,7 +47,6 @@ public class MoteurImpl implements Moteur {
     public  static final int Max_NbMesure = 7;
 
 
-
     /**
      * Default constructor
      */
@@ -56,7 +55,17 @@ public class MoteurImpl implements Moteur {
         Mesure = 4;
     }
 
+    @Override
+    public void setCmdMarquerTemps(Command c) {
+        this.cmdt = c;
+        cmdt.execute();
+    }
 
+    @Override
+    public void setCmdMarquerMesure(Command c) {
+        this.cmdm = c;
+        cmdt.execute();
+    }
 
     /**
      * @param o
@@ -72,6 +81,7 @@ public class MoteurImpl implements Moteur {
         // TODO implement here
     }
 
+
     @Override
     public UpdatTempo getTempo() {
         return tmp;
@@ -79,7 +89,7 @@ public class MoteurImpl implements Moteur {
 
     @Override
     public void setTempo(UpdatTempo t) {
-            tmp = t;
+        tmp = t;
     }
 
     @Override
@@ -88,29 +98,18 @@ public class MoteurImpl implements Moteur {
     }
 
     @Override
-    public void setNbrTempo(Integer n) {
-            tmp.setValTempo(n);
+    public void setNbrTempo(int n) {
+        tmp.setValTempo(n);
     }
 
     @Override
-    public void setEnMarche(Boolean m) {
+    public void setEnMarche(boolean m) {
         etat = m;
     }
 
     @Override
-    public Boolean getEnMarche() {
+    public boolean getEnMarche() {
         return etat;
     }
-
-    @Override
-    public void setCmdMarquerTemps(Command cmdt) {
-
-    }
-
-    @Override
-    public void setCmdMarquerMesure(Command cmdm) {
-
-    }
-
 
 }
