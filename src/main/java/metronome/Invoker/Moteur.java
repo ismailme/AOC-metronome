@@ -3,7 +3,7 @@ package src.main.java.metronome.Invoker;
 import src.main.java.metronome.Command.Command;
 import src.main.java.metronome.Command.UpdatTempo;
 
-import java.util.*;
+
 
 /**
  * 
@@ -14,12 +14,12 @@ public interface Moteur {
     /**
      * @param o
      */
-    public void attach(Observer o);
+    //public void attach(Observer o);
 
     /**
      * @param o
      */
-    public void detach(Observer o);
+    //public void detach(Observer o);
 
 
 
