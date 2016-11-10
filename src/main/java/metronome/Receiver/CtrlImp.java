@@ -27,13 +27,6 @@ public class CtrlImp implements Ctrl {
         // TODO
     }
 
-    public void IncrTempo(){
-        // TODO
-    }
-
-    public void DecrTempo(){
-        // TODO
-    }
 
 
 }

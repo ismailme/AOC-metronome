@@ -23,14 +23,6 @@ public interface Ctrl {
      */
     public void marquerMesure();
 
-    /**
-     * Incrementer la valeur du tempo
-     */
-    public void IncrTempo();
 
-    /**
-     * Decrementer la valeur du tempo
-     */
-    public void DecrTempo();
 
 }
