@@ -74,26 +74,47 @@ public class MoteurImpl implements Moteur {
     }
 
     public void start() {
-        if (this.getEnMarche()) {
             new Thread(new Runnable() {
                 public void run() {
+
                     MoteurImpl.this.cmdm.execute();
                     int count = 1;
-                    while (MoteurImpl.this.etat) {
-                        if (count%MoteurImpl.this.mesure != 0 ){
-                            MoteurImpl.this.cmdm.execute();
-                            count = 0;
-                            continue;
+                        while (MoteurImpl.this.etat) {
+
+
+                            if (count % MoteurImpl.this.mesure != 0) {
+                                MoteurImpl.this.cmdm.execute();
+                                count = 0;
+                                continue;
+                            } else {
+                                MoteurImpl.this.cmdt.execute();
+                            }
+                            count++;
+
+                            try {
+                                Thread.sleep((60000/MoteurImpl.this.valTempo));
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                         }
-                        else{
-                            MoteurImpl.this.cmdt.execute();
-                        }
-                        count++;
-                    }
+
 
                 }
             }).start();
+
+    }
+
+    public void play(boolean play){
+        if(this.etat == play)
+            return;
+
+        this.etat=play;
+
+        if(etat){
+            this.start();
         }
+
+
     }
 
     @Override
