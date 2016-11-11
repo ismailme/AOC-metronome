@@ -31,7 +31,7 @@ public class MoteurImpl implements Moteur {
     /**
      * La valeur du Tempo
      */
-    private UpdatTempo tmp;
+   // private UpdatTempo tmp;
 
     /**
      * La valeur du nombre de temps par mesure
@@ -76,45 +76,35 @@ public class MoteurImpl implements Moteur {
     public void start() {
             new Thread(new Runnable() {
                 public void run() {
-
                     MoteurImpl.this.cmdm.execute();
-                    int count = 1;
+                    int count = 2;
                         while (MoteurImpl.this.etat) {
-
-
+                            System.out.println("count= "+count);
                             if (count % MoteurImpl.this.mesure != 0) {
                                 MoteurImpl.this.cmdm.execute();
-                                count = 0;
-                                continue;
+                                count++;
                             } else {
                                 MoteurImpl.this.cmdt.execute();
+                                count = 1;
                             }
-                            count++;
-
                             try {
-                                Thread.sleep((60000/MoteurImpl.this.valTempo));
+                               // Thread.sleep((60/MoteurImpl.this.valTempo));
+                                Thread.sleep(2000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                         }
-
-
                 }
             }).start();
-
     }
 
     public void play(boolean play){
         if(this.etat == play)
             return;
-
         this.etat=play;
-
         if(etat){
             this.start();
         }
-
-
     }
 
     @Override
@@ -130,24 +120,7 @@ public class MoteurImpl implements Moteur {
     }
 
 
-
-    /**
-     * @param o
-     */
-    public void attach(Observer o) {
-
-        // TODO implement here
-    }
-
-    /**
-     * @param o
-     */
-    public void detach(Observer o) {
-        // TODO implement here
-    }
-
-
-    @Override
+   /* @Override
     public UpdatTempo getTempo() {
         return tmp;
     }
@@ -156,16 +129,16 @@ public class MoteurImpl implements Moteur {
     public void setTempo(UpdatTempo t) {
         tmp = t;
     }
-
+*/
     @Override
     public int getNbrTempo() {
         return this.valTempo;
     }
 
-    @Override
+  /*  @Override
     public void setNbrTempo(int n) {
         tmp.setValTempo(n);
-    }
+    }*/
 
     @Override
     public void setEnMarche(boolean m) {
@@ -178,6 +151,19 @@ public class MoteurImpl implements Moteur {
     }
 
 
+    /**
+     * @param o
+     */
+   /* public void attach(Observer o) {
 
+        // TODO implement here
+    }*/
+
+    /**
+     * @param o
+     */
+  /*  public void detach(Observer o) {
+        // TODO implement here
+    }*/
 
 }

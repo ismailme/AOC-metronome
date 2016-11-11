@@ -8,10 +8,16 @@ import src.main.java.metronome.Invoker.Moteur;
 
 public class CtrlImp implements Ctrl {
 
+    Moteur moteur;
+
     /**
      * Default constructor
      */
     public CtrlImp() {
+    }
+
+    public CtrlImp(Moteur m){
+        this.moteur = m;
     }
 
     @Override
@@ -20,11 +26,11 @@ public class CtrlImp implements Ctrl {
     }
 
     public void marquerTemps() {
-        // TODO
+        System.out.println("marquer temps");
     }
 
     public void marquerMesure() {
-        // TODO
+        System.out.println("marquer mesure");
     }
 
 

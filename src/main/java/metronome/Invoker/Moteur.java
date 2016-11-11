@@ -23,13 +23,13 @@ public interface Moteur {
 
 
 
-    public UpdatTempo getTempo();
+  //  public UpdatTempo getTempo();
 
     /**
      * Met a jour le tempo
      * @param t
      */
-    public void setTempo(UpdatTempo t);
+   // public void setTempo(UpdatTempo t);
 
     /**
      * Retourne le temps par mesure
@@ -41,7 +41,7 @@ public interface Moteur {
      * Met a jour le temps par mesur
      * @param n : le  temps par mesure
      */
-    public void setNbrTempo(int n);
+   // public void setNbrTempo(int n);
 
     /**
      * On ou Off le MoteurMetronom
@@ -66,6 +66,12 @@ public interface Moteur {
      * @param cmdm
      */
     public void setCmdMarquerMesure(Command cmdm);
+
+    /**
+     * Lance ou arrête le métronome
+     * @param play
+     */
+    public void play(boolean play);
 
 
 
