@@ -33,6 +33,25 @@ public class CtrlImp implements Ctrl {
         System.out.println("marquer mesure");
     }
 
+    @Override
+    public void IncrMesure() {
+
+    }
+
+    @Override
+    public void DecMesure() {
+
+    }
+
+    @Override
+    public void IncrTempo() {
+
+    }
+
+    @Override
+    public void DecTempo() {
+
+    }
 
 
 }

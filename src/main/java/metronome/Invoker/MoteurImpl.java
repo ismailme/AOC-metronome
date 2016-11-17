@@ -1,10 +1,8 @@
 package src.main.java.metronome.Invoker;
 
-import com.thoughtworks.xstream.mapper.Mapper;
 import src.main.java.metronome.Command.Command;
-import src.main.java.metronome.Command.UpdatTempo;
-import src.main.java.metronome.Observer.Observer;
-import src.main.java.metronome.Receiver.Ctrl;
+
+
 
 
 /**
@@ -69,7 +67,7 @@ public class MoteurImpl implements Moteur {
 
     public MoteurImpl() {
         etat = false;
-        mesure = 4;
+        mesure = 5;
         valTempo = 150;
     }
 
@@ -79,7 +77,6 @@ public class MoteurImpl implements Moteur {
                     MoteurImpl.this.cmdm.execute();
                     int count = 2;
                         while (MoteurImpl.this.etat) {
-                            System.out.println("count= "+count);
                             if (count % MoteurImpl.this.mesure != 0) {
                                 MoteurImpl.this.cmdm.execute();
                                 count++;
@@ -89,7 +86,7 @@ public class MoteurImpl implements Moteur {
                             }
                             try {
                                // Thread.sleep((60/MoteurImpl.this.valTempo));
-                                Thread.sleep(2000);
+                                Thread.sleep(500);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
