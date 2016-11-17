@@ -1,14 +1,18 @@
 package src.main.java.metronome.Invoker;
 
 import src.main.java.metronome.Command.Command;
+import src.main.java.metronome.Observer.Observer;
+import src.main.java.metronome.Subject.Subject;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * 
  */
-public class MoteurImpl implements Moteur {
+public class MoteurImpl implements Moteur,Subject
+{
 
     /**
      * Commande  de marquer temps
@@ -61,6 +65,12 @@ public class MoteurImpl implements Moteur {
     private int valTempo;
 
     /**
+     *
+     */
+    private List<Observer> observers;
+
+
+    /**
      * Default constructor
      */
 
@@ -69,6 +79,7 @@ public class MoteurImpl implements Moteur {
         etat = false;
         mesure = 5;
         valTempo = 150;
+        this.observers = new ArrayList<>();
     }
 
     public void start() {
@@ -151,16 +162,25 @@ public class MoteurImpl implements Moteur {
     /**
      * @param o
      */
-   /* public void attach(Observer o) {
+    public void attach(Observer o) {
 
         // TODO implement here
-    }*/
+    }
+
+    @Override
+    public void notifyObservers() {
+
+        // TODO implement here
+    }
 
     /**
      * @param o
      */
-  /*  public void detach(Observer o) {
+    public void detach(Observer o) {
+
         // TODO implement here
-    }*/
+    }
+
+
 
 }

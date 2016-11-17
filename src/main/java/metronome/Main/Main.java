@@ -1,4 +1,4 @@
-package src.main.java.metronome.Client;
+package src.main.java.metronome.Main;
 
 import src.main.java.metronome.Command.Command;
 import src.main.java.metronome.Command.MarquerMesure;
