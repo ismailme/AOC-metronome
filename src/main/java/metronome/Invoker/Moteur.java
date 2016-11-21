@@ -10,6 +10,10 @@ import src.main.java.metronome.Command.UpdatTempo;
  */
 public interface Moteur {
 
+    /**
+     * initialise le moteur
+     */
+    public void init();
 
     /**
      * @param o
@@ -35,7 +39,7 @@ public interface Moteur {
      * Retourne le temps par mesure
      * @return le temps par mesure
      */
-    public int getNbrTempo();
+    public int getTempo();
 
     /**
      * Met a jour le temps par mesur
@@ -72,6 +76,11 @@ public interface Moteur {
      * @param play
      */
     public void play(boolean play);
+
+    /**
+     * Incrementer le tempo de 1
+     */
+    public void incTempo();
 
 
 

@@ -6,18 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import static javafx.application.Application.launch;
 
 /**
  * Created by H-raf on 17/11/2016.
  */
 public class MainApp extends Application{
     public static void main (String[] args) {
+
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        System.out.println("staraaaaaart");
         Parent root = FXMLLoader.load(getClass().getResource("../sample.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("métronome V1");

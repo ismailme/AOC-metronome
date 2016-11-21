@@ -8,6 +8,10 @@ import src.main.java.metronome.Invoker.Moteur;
  */
 public interface Ctrl {
 
+    /**
+     * initialise le controlleur et configure le moteur
+     */
+    public void init();
 
     /**
      * @param m
@@ -43,6 +47,22 @@ public interface Ctrl {
      * Decrementer le tempo
      */
     public void DecTempo();
+
+    /**
+     * démarre le métronome
+     */
+    public void start();
+
+    /**
+     * arrête le métronome
+     */
+    public void stop();
+
+    /**
+     *
+     * @param m
+     */
+    public void setMoteur(Moteur m);
 
 
 }

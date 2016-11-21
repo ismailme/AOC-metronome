@@ -20,4 +20,9 @@ public class IncMesure implements Command {
     public void execute() {
 
     }
+
+    @Override
+    public void setMoteur(Ctrl m) {
+        this.controler = m;
+    }
 }

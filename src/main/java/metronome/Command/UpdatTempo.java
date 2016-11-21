@@ -1,5 +1,7 @@
 package src.main.java.metronome.Command;
 
+import src.main.java.metronome.Receiver.Ctrl;
+
 /**
  * Created by MELLALI on 14/10/2016.
  */
@@ -18,6 +20,8 @@ public class UpdatTempo implements Command {
      * Valeur du Tempo
      */
     private int valTempo;
+
+    Ctrl controler;
 
 
     public UpdatTempo(int valTempo) {
@@ -43,5 +47,10 @@ public class UpdatTempo implements Command {
     @Override
     public void execute() {
 
+    }
+
+    @Override
+    public void setMoteur(Ctrl m) {
+        this.controler = m;
     }
 }

@@ -20,4 +20,9 @@ public class MarquerTemps implements Command {
     public void execute() {
         controler.marquerTemps();
     }
+
+    @Override
+    public void setMoteur(Ctrl m) {
+        this.controler = m;
+    }
 }

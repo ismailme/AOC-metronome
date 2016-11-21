@@ -18,6 +18,11 @@ public class IncrTempo implements Command {
 
     @Override
     public void execute() {
+        controler.IncrTempo();
+    }
 
+    @Override
+    public void setMoteur(Ctrl m) {
+        this.controler = m;
     }
 }

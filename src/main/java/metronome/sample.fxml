@@ -4,12 +4,14 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.main.java.metronome.IHM.IhmImpl">
    <children>
-      <Button layoutX="418.0" layoutY="66.0" mnemonicParsing="false" text="INC TEMPO" />
-      <Button layoutX="418.0" layoutY="105.0" mnemonicParsing="false" text="DEC TEMPO" />
-      <Button layoutX="433.0" layoutY="276.0" mnemonicParsing="false" text="START" />
-      <Slider layoutX="99.0" layoutY="269.0" />
+      <Button fx:id="incrementerT" layoutX="418.0" layoutY="66.0" mnemonicParsing="false" text="INC TEMPO" />
+      <Button fx:id="decrementerT" layoutX="418.0" layoutY="105.0" mnemonicParsing="false" text="DEC TEMPO" />
+      <Button fx:id="startMetro" layoutX="433.0" layoutY="276.0" mnemonicParsing="false" text="START" />
+      <Slider layoutX="120.0" layoutY="269.0" />
+      <Button fx:id="incrementerM" layoutX="41.0" layoutY="66.0" mnemonicParsing="false" text="INC MESURE" />
+      <Button fx:id="decrementerM" layoutX="41.0" layoutY="105.0" mnemonicParsing="false" text="DEC MESURE" />
+      <Button fx:id="stopMetro" layoutX="530.0" layoutY="276.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

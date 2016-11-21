@@ -62,7 +62,7 @@ public class MoteurImpl implements Moteur,Subject
     /**
      * Valeur du Tempo
      */
-    private int valTempo;
+    private int tempo;
 
     /**
      *
@@ -76,28 +76,38 @@ public class MoteurImpl implements Moteur,Subject
 
 
     public MoteurImpl() {
+
+        this.observers = new ArrayList<>();
+        this.init();
+    }
+
+    @Override
+    public void init() {
+
         etat = false;
         mesure = 5;
-        valTempo = 150;
-        this.observers = new ArrayList<>();
+        tempo = 120;
+
     }
 
     public void start() {
             new Thread(new Runnable() {
                 public void run() {
-                    MoteurImpl.this.cmdm.execute();
-                    int count = 2;
+                    int count = 1;
                         while (MoteurImpl.this.etat) {
                             if (count % MoteurImpl.this.mesure != 0) {
-                                MoteurImpl.this.cmdm.execute();
+
+                                cmdm.execute();
+                                System.out.println("2");
                                 count++;
                             } else {
-                                MoteurImpl.this.cmdt.execute();
+
+                                cmdt.execute();
                                 count = 1;
                             }
                             try {
-                               // Thread.sleep((60/MoteurImpl.this.valTempo));
-                                Thread.sleep(500);
+                                Thread.sleep((60000/MoteurImpl.this.tempo));
+                                //Thread.sleep(500);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
@@ -107,7 +117,7 @@ public class MoteurImpl implements Moteur,Subject
     }
 
     public void play(boolean play){
-        if(this.etat == play)
+        if(etat == play)
             return;
         this.etat=play;
         if(etat){
@@ -116,15 +126,21 @@ public class MoteurImpl implements Moteur,Subject
     }
 
     @Override
+    public void incTempo() {
+        this.tempo+=1;
+        System.out.println("tempooo "+this.getTempo());
+    }
+
+    @Override
     public void setCmdMarquerTemps(Command c) {
         this.cmdt = c;
-        //cmdt.execute();
+
     }
 
     @Override
     public void setCmdMarquerMesure(Command c) {
         this.cmdm = c;
-        //cmdt.execute();
+
     }
 
 
@@ -138,9 +154,11 @@ public class MoteurImpl implements Moteur,Subject
         tmp = t;
     }
 */
-    @Override
-    public int getNbrTempo() {
-        return this.valTempo;
+
+
+
+    public int getTempo() {
+        return this.tempo;
     }
 
   /*  @Override

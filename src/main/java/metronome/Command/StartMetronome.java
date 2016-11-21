@@ -1,25 +1,21 @@
 package src.main.java.metronome.Command;
 
-import src.main.java.metronome.Invoker.Moteur;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by h-raf on 11/11/16.
+ * Created by H-raf on 21/11/2016.
  */
-public class DecMesure implements Command {
+public class StartMetronome implements Command {
 
-    Ctrl controler;
+    private Ctrl controler;
 
-    public DecMesure() {
-    }
+    public StartMetronome(){
 
-    public DecMesure(Ctrl c) {
-        this.controler = c;
     }
 
     @Override
     public void execute() {
-
+        this.controler.start();
     }
 
     @Override

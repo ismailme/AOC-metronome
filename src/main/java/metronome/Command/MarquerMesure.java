@@ -19,4 +19,9 @@ public class MarquerMesure implements Command {
     public void execute() {
         controler.marquerMesure();
     }
+
+    @Override
+    public void setMoteur(Ctrl m) {
+        this.controler = m;
+    }
 }
