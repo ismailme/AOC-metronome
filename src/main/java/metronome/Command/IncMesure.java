@@ -18,7 +18,7 @@ public class IncMesure implements Command {
 
     @Override
     public void execute() {
-
+        this.controler.IncrMesure();
     }
 
     @Override

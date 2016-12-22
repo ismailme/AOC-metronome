@@ -17,9 +17,4 @@ public class ButtonFXImpl implements ButtonFX {
         this.cmd = c;
         c.execute();
     }
-
-    @Override
-    public void setMoteur(Moteur m) {
-
-    }
 }

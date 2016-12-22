@@ -59,6 +59,11 @@ public interface Ctrl {
     public void stop();
 
     /**
+     * update tempo
+     */
+    public void updateCurseur(int v);
+
+    /**
      *
      * @param m
      */

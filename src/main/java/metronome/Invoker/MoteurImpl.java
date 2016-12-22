@@ -132,6 +132,24 @@ public class MoteurImpl implements Moteur,Subject
     }
 
     @Override
+    public void decTempo() {
+        this.tempo-=1;
+        System.out.println("tempooo "+this.getTempo());
+    }
+
+    @Override
+    public void incMesure() {
+        this.mesure+=1;
+        System.out.println("mesure "+this.getMesure());
+    }
+
+    @Override
+    public void decMesure() {
+        this.mesure-=1;
+        System.out.println("mesure "+this.getMesure());
+    }
+
+    @Override
     public void setCmdMarquerTemps(Command c) {
         this.cmdt = c;
 
@@ -159,6 +177,11 @@ public class MoteurImpl implements Moteur,Subject
 
     public int getTempo() {
         return this.tempo;
+    }
+
+    @Override
+    public int getMesure() {
+        return this.mesure;
     }
 
   /*  @Override
@@ -199,6 +222,14 @@ public class MoteurImpl implements Moteur,Subject
         // TODO implement here
     }
 
+    @Override
+    public void setMesure(int mesure) {
+        this.mesure = mesure;
+    }
 
-
+    @Override
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
+        System.out.println("Tempo updated to "+this.tempo);
+    }
 }

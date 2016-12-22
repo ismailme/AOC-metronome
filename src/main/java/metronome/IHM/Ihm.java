@@ -7,4 +7,7 @@ import src.main.java.metronome.Invoker.Moteur;
  */
 public interface Ihm {
 
+    public void marquerTemps();
+    public void marquerMesure();
+
 }

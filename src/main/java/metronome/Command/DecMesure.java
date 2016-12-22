@@ -19,7 +19,7 @@ public class DecMesure implements Command {
 
     @Override
     public void execute() {
-
+        this.controler.DecMesure();
     }
 
     @Override

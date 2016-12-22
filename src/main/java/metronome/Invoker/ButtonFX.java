@@ -8,5 +8,4 @@ import src.main.java.metronome.Command.Command;
 public interface ButtonFX {
 
     public void setCmd(Command c);
-    public void setMoteur(Moteur m);
 }

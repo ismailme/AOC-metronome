@@ -42,6 +42,12 @@ public interface Moteur {
     public int getTempo();
 
     /**
+     * Retourne la mesure
+     * @return mesure
+     */
+    public int getMesure();
+
+    /**
      * Met a jour le temps par mesur
      * @param n : le  temps par mesure
      */
@@ -81,6 +87,27 @@ public interface Moteur {
      * Incrementer le tempo de 1
      */
     public void incTempo();
+
+    /**
+     * decremente le tempo de 1
+     */
+    public void decTempo();
+
+    /**
+     * incremente la mesure de 1
+
+     */
+    public void incMesure();
+
+    /**
+     * decremente la mesure de 1
+     */
+    public void decMesure();
+
+    public void setMesure(int mesure);
+
+    public void setTempo(int tempo);
+
 
 
 

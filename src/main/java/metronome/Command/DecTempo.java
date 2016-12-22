@@ -18,7 +18,7 @@ public class DecTempo implements Command {
 
     @Override
     public void execute() {
-
+        this.controler.DecTempo();
     }
 
     @Override
