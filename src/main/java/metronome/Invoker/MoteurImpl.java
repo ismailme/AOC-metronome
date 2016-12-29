@@ -2,7 +2,7 @@ package src.main.java.metronome.Invoker;
 
 import src.main.java.metronome.Command.Command;
 import src.main.java.metronome.Command.IncrTempo;
-import src.main.java.metronome.Command.UpdatTempo;
+import src.main.java.metronome.Command.UpdateTempo;
 import src.main.java.metronome.Observer.Observer;
 import src.main.java.metronome.Subject.Subject;
 
@@ -37,7 +37,7 @@ public class MoteurImpl implements Moteur,Subject
     /**
      * La valeur du Tempo
      */
-    private UpdatTempo tmp;
+//    private UpdatTempo tmp;
 
     /**
      * La valeur du nombre de temps par mesure
@@ -78,6 +78,7 @@ public class MoteurImpl implements Moteur,Subject
      * Default constructor
      */
     private Command updateMesure;
+    private Command updateTempo;
 
     public MoteurImpl() {
 
@@ -97,6 +98,12 @@ public class MoteurImpl implements Moteur,Subject
     @Override
     public void setCmdUpdateMesure(Command cmd){
         this.updateMesure = cmd;
+
+    }
+
+    @Override
+    public void setCmdUpdateTempo(Command cmd){
+        this.updateTempo = cmd;
 
     }
 
@@ -138,6 +145,7 @@ public class MoteurImpl implements Moteur,Subject
     @Override
     public void incTempo() {
         this.tempo+=1;
+        setTempo(this.tempo);
         System.out.println("tempooo "+this.getTempo());
 
     }
@@ -146,6 +154,7 @@ public class MoteurImpl implements Moteur,Subject
     @Override
     public void decTempo() {
         this.tempo-=1;
+        setTempo(this.tempo);
         System.out.println("tempooo "+this.getTempo());
 
     }
@@ -241,7 +250,7 @@ public class MoteurImpl implements Moteur,Subject
 
     @Override
     public void setMesure(int mesure) {
-        if ((mesure <= this.Max_NbMesure && mesure >= this.Min_NbMesure)){
+        if ((mesure <= this.Max_NbMesure )&&( mesure >= this.Min_NbMesure)){
             this.mesure = mesure;
             this.updateMesure.execute();
         }
@@ -256,6 +265,16 @@ public class MoteurImpl implements Moteur,Subject
     @Override
     public void setTempo(int tempo) {
         this.tempo = tempo;
+        this.updateTempo.execute();
         System.out.println("Tempo updated to "+this.tempo);
-    }
+//    if ((tempo <= this.maxtempo) && (tempo >= this.mintempo)){
+//        this.tempo = tempo;
+//        this.updateTempo.execute();
+//        System.out.println("Tempo updated to "+this.tempo);
+//    }
+//    else
+//        if(tempo > this.maxtempo){ this.tempo = this.maxtempo;}
+//        else if (tempo < this.mintempo){this.tempo = this.mintempo;}
+//
+   }
 }

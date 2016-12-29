@@ -5,7 +5,7 @@ import src.main.java.metronome.Receiver.Ctrl;
 /**
  * Created by MELLALI on 14/10/2016.
  */
-public class UpdatTempo implements Command {
+public class UpdateTempo implements Command {
 
     /**
      * Minimum Tempo
@@ -24,11 +24,11 @@ public class UpdatTempo implements Command {
     Ctrl controler;
 
 
-    public UpdatTempo(int valTempo) {
+    public UpdateTempo(int valTempo) {
         this.valTempo = valTempo;
     }
 
-    public UpdatTempo(Ctrl controler) {
+    public UpdateTempo(Ctrl controler) {
         this.controler = controler;
     }
 

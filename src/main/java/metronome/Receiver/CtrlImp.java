@@ -28,6 +28,7 @@ public class CtrlImp implements Ctrl {
         this.ihm = ihm;
         this.moteur = new MoteurImpl();
         this.init();
+
     }
 
 
@@ -36,17 +37,19 @@ public class CtrlImp implements Ctrl {
         Command marquerMesure = new MarquerMesure(this);
         Command marquerTemps = new MarquerTemps(this);
         Command updateMesure= new UpdateMesure(this);
+        Command updateTempo= new UpdateTempo(this);
 
         this.moteur.setCmdMarquerMesure(marquerMesure);
         this.moteur.setCmdMarquerTemps(marquerTemps);
         this.moteur.setCmdUpdateMesure(updateMesure);
+        this.moteur.setCmdUpdateTempo(updateTempo);
 
     }
 
     @Override
     public void UpdateTempo(/*Moteur m*/) {
         this.tempo = this.moteur.getTempo();
-        this.ihm.textmesure.setText(Integer.toString(this.tempo));
+        this.ihm.texttempo.setText(Integer.toString(this.tempo));
     }
 
     @Override

@@ -109,6 +109,7 @@ public interface Moteur {
     public void setTempo(int tempo);
 
     void setCmdUpdateMesure(Command cmd);
+    void setCmdUpdateTempo(Command cmd);
 
 
 

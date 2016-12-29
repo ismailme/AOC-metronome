@@ -30,7 +30,7 @@ public class IhmImpl implements Ihm,Initializable {
     @FXML
     Circle ledTemps,ledMesure;
     @FXML Slider tempo;
-    @FXML public TextField textmesure;
+    @FXML public TextField textmesure, texttempo;
     Command incrT,decrT,incrM,decrM,start,stop;
     ButtonFX btn;
     CurseurFX cFX;
@@ -61,7 +61,8 @@ public class IhmImpl implements Ihm,Initializable {
 
 
         this.btn = new ButtonFXImpl();
-        this.textmesure.setText("");
+        this.textmesure.setText("5");
+        this.texttempo.setText("120");
 
 
         this.incrementerT.setOnAction((event -> {

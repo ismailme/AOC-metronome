@@ -19,6 +19,7 @@ public class IncrTempo implements Command {
     @Override
     public void execute() {
         controler.IncrTempo();
+
     }
 
     @Override
