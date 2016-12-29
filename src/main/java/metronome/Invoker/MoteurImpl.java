@@ -1,11 +1,15 @@
 package src.main.java.metronome.Invoker;
 
 import src.main.java.metronome.Command.Command;
+import src.main.java.metronome.Command.IncrTempo;
+import src.main.java.metronome.Command.UpdatTempo;
 import src.main.java.metronome.Observer.Observer;
 import src.main.java.metronome.Subject.Subject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -33,7 +37,7 @@ public class MoteurImpl implements Moteur,Subject
     /**
      * La valeur du Tempo
      */
-   // private UpdatTempo tmp;
+    private UpdatTempo tmp;
 
     /**
      * La valeur du nombre de temps par mesure
@@ -73,7 +77,7 @@ public class MoteurImpl implements Moteur,Subject
     /**
      * Default constructor
      */
-
+    private Command updateMesure;
 
     public MoteurImpl() {
 
@@ -87,6 +91,12 @@ public class MoteurImpl implements Moteur,Subject
         etat = false;
         mesure = 5;
         tempo = 120;
+
+    }
+
+    @Override
+    public void setCmdUpdateMesure(Command cmd){
+        this.updateMesure = cmd;
 
     }
 
@@ -129,24 +139,32 @@ public class MoteurImpl implements Moteur,Subject
     public void incTempo() {
         this.tempo+=1;
         System.out.println("tempooo "+this.getTempo());
+
     }
+
 
     @Override
     public void decTempo() {
         this.tempo-=1;
         System.out.println("tempooo "+this.getTempo());
+
     }
 
     @Override
     public void incMesure() {
-        this.mesure+=1;
+        this.mesure++;
+        setMesure(this.mesure);
         System.out.println("mesure "+this.getMesure());
+        //this.updateMesure.execute();
+
     }
 
     @Override
     public void decMesure() {
         this.mesure-=1;
+        setMesure(this.mesure);
         System.out.println("mesure "+this.getMesure());
+
     }
 
     @Override
@@ -172,7 +190,6 @@ public class MoteurImpl implements Moteur,Subject
         tmp = t;
     }
 */
-
 
 
     public int getTempo() {
@@ -224,7 +241,16 @@ public class MoteurImpl implements Moteur,Subject
 
     @Override
     public void setMesure(int mesure) {
-        this.mesure = mesure;
+        if ((mesure <= this.Max_NbMesure && mesure >= this.Min_NbMesure)){
+            this.mesure = mesure;
+            this.updateMesure.execute();
+        }
+        else
+            if(mesure > this.Max_NbMesure){ this.mesure=this.Max_NbMesure;}
+           else if(mesure < this.Min_NbMesure){ this.mesure=this.Min_NbMesure;}
+
+
+
     }
 
     @Override

@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.AmbientLight;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import src.main.java.metronome.Command.*;
@@ -29,6 +30,7 @@ public class IhmImpl implements Ihm,Initializable {
     @FXML
     Circle ledTemps,ledMesure;
     @FXML Slider tempo;
+    @FXML public TextField textmesure;
     Command incrT,decrT,incrM,decrM,start,stop;
     ButtonFX btn;
     CurseurFX cFX;
@@ -59,6 +61,7 @@ public class IhmImpl implements Ihm,Initializable {
 
 
         this.btn = new ButtonFXImpl();
+        this.textmesure.setText("");
 
 
         this.incrementerT.setOnAction((event -> {

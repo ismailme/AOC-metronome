@@ -28,6 +28,10 @@ public class UpdatTempo implements Command {
         this.valTempo = valTempo;
     }
 
+    public UpdatTempo(Ctrl controler) {
+        this.controler = controler;
+    }
+
     public static int getMintempo() {
         return mintempo;
     }
@@ -46,7 +50,7 @@ public class UpdatTempo implements Command {
 
     @Override
     public void execute() {
-
+            this.controler.UpdateTempo();
     }
 
     @Override

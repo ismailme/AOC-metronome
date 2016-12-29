@@ -1,9 +1,8 @@
 package src.main.java.metronome.Receiver;
 
-import src.main.java.metronome.Command.Command;
-import src.main.java.metronome.Command.MarquerMesure;
-import src.main.java.metronome.Command.MarquerTemps;
+import src.main.java.metronome.Command.*;
 import src.main.java.metronome.IHM.Ihm;
+import src.main.java.metronome.IHM.IhmImpl;
 import src.main.java.metronome.Invoker.Moteur;
 import src.main.java.metronome.Invoker.MoteurImpl;
 
@@ -13,9 +12,11 @@ import src.main.java.metronome.Invoker.MoteurImpl;
 
 public class CtrlImp implements Ctrl {
 
-    Moteur moteur;
-    Ihm ihm;
-
+    private Moteur moteur;
+    //private Ihm ihm;
+    private IhmImpl ihm;
+    private int tempo;
+    private int mesure;
     /**
      * Default constructor
      */
@@ -23,7 +24,7 @@ public class CtrlImp implements Ctrl {
 
     }
 
-    public CtrlImp(Ihm ihm) {
+    public CtrlImp(/*Ihm*/IhmImpl ihm) {
         this.ihm = ihm;
         this.moteur = new MoteurImpl();
         this.init();
@@ -34,15 +35,25 @@ public class CtrlImp implements Ctrl {
     public void init() {
         Command marquerMesure = new MarquerMesure(this);
         Command marquerTemps = new MarquerTemps(this);
+        Command updateMesure= new UpdateMesure(this);
 
         this.moteur.setCmdMarquerMesure(marquerMesure);
         this.moteur.setCmdMarquerTemps(marquerTemps);
+        this.moteur.setCmdUpdateMesure(updateMesure);
 
     }
 
     @Override
-    public void UpdateTempo(Moteur m) {
+    public void UpdateTempo(/*Moteur m*/) {
+        this.tempo = this.moteur.getTempo();
+        this.ihm.textmesure.setText(Integer.toString(this.tempo));
+    }
 
+    @Override
+    public void UpdateMesure() {
+        this.mesure = this.moteur.getMesure();
+        System.out.println("-> "+this.mesure);
+        this.ihm.textmesure.setText(Integer.toString(this.mesure));
     }
 
     public void marquerTemps() {
@@ -57,7 +68,7 @@ public class CtrlImp implements Ctrl {
 
     @Override
     public void IncrMesure() {
-        this.moteur.incMesure();
+        System.out.println(">>>>>>>");this.moteur.incMesure();
     }
 
     @Override
@@ -67,7 +78,7 @@ public class CtrlImp implements Ctrl {
 
     @Override
     public void IncrTempo() {
-
+        System.out.println("---->");
         this.moteur.incTempo();
     }
 

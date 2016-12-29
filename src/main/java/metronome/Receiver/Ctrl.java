@@ -13,10 +13,8 @@ public interface Ctrl {
      */
     public void init();
 
-    /**
-     * @param m
-     */
-    public void UpdateTempo(Moteur m);
+
+    public void UpdateTempo(/*Moteur m*/);
 
     /**
      * Marquer un temps
@@ -27,6 +25,8 @@ public interface Ctrl {
      * Marquer une mesure
      */
     public void marquerMesure();
+
+    public  void UpdateMesure();
 
     /**
      * Incrementer la mesure
