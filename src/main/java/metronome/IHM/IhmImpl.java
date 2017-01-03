@@ -6,6 +6,8 @@ import javafx.scene.AmbientLight;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import src.main.java.metronome.Command.*;
@@ -34,6 +36,11 @@ public class IhmImpl implements Ihm,Initializable {
     Command incrT,decrT,incrM,decrM,start,stop;
     ButtonFX btn;
     CurseurFX cFX;
+
+    /**
+     *  sono metronome
+     */
+    private MediaPlayer SonoLed1 = null, SonoLed2 = null;
 
     public IhmImpl(){
         this.ctl = new CtrlImp(this);
@@ -95,28 +102,44 @@ public class IhmImpl implements Ihm,Initializable {
             System.out.println("new valuuue "+newValue.intValue());
 
         });
+
+        final Media soundLED1 = new Media(getClass().getResource("/sound/led1.wav").toString());
+        SonoLed1 = new MediaPlayer(soundLED1);
+        SonoLed1.setCycleCount(MediaPlayer.INDEFINITE);
+
+        final Media soundLED2 = new Media(getClass().getResource("/sound/led2.wav").toString());
+        SonoLed2 = new MediaPlayer(soundLED2);
+        SonoLed2.setCycleCount(MediaPlayer.INDEFINITE);
     }
 
     @Override
     public void marquerTemps() {
+
         ledTemps.setFill(Color.web("#1fff32"));
+
+
+        SonoLed1.play();
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         ledTemps.setFill(Color.web("#1fff327d"));
+
+        SonoLed1.stop();
     }
 
     @Override
     public void marquerMesure() {
         ledMesure.setFill(Color.web("#ff1f1f"));
+        SonoLed2.play();
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         ledMesure.setFill(Color.web("#ff1f1f7d"));
+        SonoLed2.stop();
 
     }
 }
