@@ -1,9 +1,11 @@
 package src.main.java.metronome.Observer;
 
 /**
- * Created by h-raf on 10/11/16.
+ * Observer
  */
 public interface Observer {
-
+    /**
+     * update
+     */
     public void update();
 }

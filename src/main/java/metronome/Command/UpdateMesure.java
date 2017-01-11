@@ -3,7 +3,8 @@ package src.main.java.metronome.Command;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by MELLALI on 29/12/2016.
+ *
+ * Mise à jour de la valeur de mesur
  */
 public class UpdateMesure implements Command {
     /**
@@ -46,6 +47,9 @@ public class UpdateMesure implements Command {
         return maxmesure;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void execute() {
         this.controler.UpdateMesure();

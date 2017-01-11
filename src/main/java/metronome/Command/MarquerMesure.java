@@ -3,7 +3,7 @@ package src.main.java.metronome.Command;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by H-raf on 17/10/2016.
+ * Marquer mesure
  */
 public class MarquerMesure implements Command {
 
@@ -12,14 +12,25 @@ public class MarquerMesure implements Command {
     public MarquerMesure(){
     }
 
+    /**
+     * constructor
+     * @param c
+     */
     public MarquerMesure(Ctrl c){
         this.controler = c;
     }
 
+    /**
+     * Execute
+     */
     public void execute() {
         controler.marquerMesure();
     }
 
+    /**
+     * {@inheritDoc}
+     * @param m
+     */
     @Override
     public void setMoteur(Ctrl m) {
         this.controler = m;

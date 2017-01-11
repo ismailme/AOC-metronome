@@ -4,7 +4,7 @@ import src.main.java.metronome.Invoker.Moteur;
 
 
 /**
- * 
+ * Controleur
  */
 public interface Ctrl {
 
@@ -13,7 +13,9 @@ public interface Ctrl {
      */
     public void init();
 
-
+    /**
+     *Update Tempo
+     */
     public void UpdateTempo(/*Moteur m*/);
 
     /**
@@ -58,13 +60,15 @@ public interface Ctrl {
      */
     public void stop();
 
+
     /**
      * update tempo
+     * @param v
      */
     public void updateCurseur(int v);
 
     /**
-     *
+     * Set Moteur
      * @param m
      */
     public void setMoteur(Moteur m);

@@ -11,17 +11,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.main.java.metronome.IHM.IhmImpl">
    <children>
-      <Button fx:id="incrementerT" layoutX="380.0" layoutY="105.0" mnemonicParsing="false" text="INC TEMPO" />
-      <Button fx:id="decrementerT" layoutX="471.0" layoutY="105.0" mnemonicParsing="false" text="DEC TEMPO" />
-      <Button fx:id="startMetro" layoutX="433.0" layoutY="276.0" mnemonicParsing="false" text="START" />
-      <Slider fx:id="tempo" layoutX="60.0" layoutY="276.0" max="300.0" min="30.0" prefHeight="38.0" prefWidth="323.0" showTickLabels="true" showTickMarks="true" value="120.0" />
-      <Button fx:id="incrementerM" layoutX="68.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="INC " />
-      <Button fx:id="decrementerM" layoutX="138.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="DEC " />
-      <Button fx:id="stopMetro" layoutX="530.0" layoutY="276.0" mnemonicParsing="false" text="Button" />
-      <Circle fx:id="ledTemps" fill="#1fff327d" layoutX="83.0" layoutY="200.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="ledMesure" fill="#ff1f1f7d" layoutX="602.0" layoutY="179.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <TextField fx:id="textmesure" layoutX="85.0" layoutY="58.0" prefHeight="38.0" prefWidth="82.0" />
-      <TextField fx:id="texttempo" layoutX="397.0" layoutY="64.0" />
+      <Button fx:id="incrementerT" layoutX="380.0" layoutY="105.0" mnemonicParsing="false" text="INC TEMPO" visible="false" />
+      <Button fx:id="decrementerT" layoutX="471.0" layoutY="105.0" mnemonicParsing="false" text="DEC TEMPO" visible="false" />
+      <Button fx:id="startMetro" layoutX="213.0" layoutY="275.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="68.0" text="START" />
+      <Slider fx:id="tempo" layoutX="281.0" layoutY="87.0" max="300.0" min="30.0" prefHeight="38.0" prefWidth="323.0" showTickLabels="true" showTickMarks="true" value="120.0" />
+      <Button fx:id="incrementerM" layoutX="43.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="INC " />
+      <Button fx:id="decrementerM" layoutX="107.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="DEC " />
+      <Button fx:id="stopMetro" layoutX="296.0" layoutY="275.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="68.0" text="Stop" />
+      <Circle fx:id="ledTemps" fill="#1fff327d" layoutX="93.0" layoutY="199.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="ledMesure" fill="#ff1f1f7d" layoutX="483.0" layoutY="187.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
+      <TextField fx:id="textmesure" layoutX="68.0" layoutY="45.0" prefHeight="31.0" prefWidth="68.0" />
+      <TextField fx:id="texttempo" layoutX="415.0" layoutY="48.0" prefHeight="25.0" prefWidth="86.0" />
       
    </children>
 </AnchorPane>

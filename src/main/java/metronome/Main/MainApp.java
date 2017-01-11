@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 
 
 /**
- * Created by H-raf on 17/11/2016.
  */
 public class MainApp extends Application{
     public static void main (String[] args) {
@@ -18,6 +17,12 @@ public class MainApp extends Application{
         launch(args);
     }
 
+    /**
+     *
+     * {@inheritDoc}
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         System.out.println("staraaaaaart");

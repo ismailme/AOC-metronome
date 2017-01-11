@@ -3,7 +3,7 @@ package src.main.java.metronome.Command;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by H-raf on 17/10/2016.
+ * Marquer Tempo
  */
 public class MarquerTemps implements Command {
 
@@ -13,14 +13,25 @@ public class MarquerTemps implements Command {
 
     }
 
+    /**
+     * Constructor
+     * @param c
+     */
     public MarquerTemps(Ctrl c){
         this.controler = c;
     }
 
+    /**
+     * Execute
+     */
     public void execute() {
         controler.marquerTemps();
     }
 
+    /**
+     * {@inheritDoc}
+     * @param m
+     */
     @Override
     public void setMoteur(Ctrl m) {
         this.controler = m;

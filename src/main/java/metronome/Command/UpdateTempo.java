@@ -3,7 +3,8 @@ package src.main.java.metronome.Command;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by MELLALI on 14/10/2016.
+ *
+ * Mise à jour de la valeur de tempo
  */
 public class UpdateTempo implements Command {
 
@@ -28,6 +29,10 @@ public class UpdateTempo implements Command {
         this.valTempo = valTempo;
     }
 
+    /**
+     * Update Tempo
+     * @param controler
+     */
     public UpdateTempo(Ctrl controler) {
         this.controler = controler;
     }
@@ -48,11 +53,19 @@ public class UpdateTempo implements Command {
         this.valTempo = valTempo;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void execute() {
             this.controler.UpdateTempo();
     }
 
+
+    /**
+     * {@inheritDoc}
+     * @param m
+     */
     @Override
     public void setMoteur(Ctrl m) {
         this.controler = m;

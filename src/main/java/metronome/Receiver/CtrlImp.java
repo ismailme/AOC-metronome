@@ -7,7 +7,7 @@ import src.main.java.metronome.Invoker.Moteur;
 import src.main.java.metronome.Invoker.MoteurImpl;
 
 /**
- * 
+ * Controleur
  */
 
 public class CtrlImp implements Ctrl {
@@ -24,7 +24,11 @@ public class CtrlImp implements Ctrl {
 
     }
 
-    public CtrlImp(/*Ihm*/IhmImpl ihm) {
+    /**
+     *
+     * @param ihm
+     */
+    public CtrlImp(IhmImpl ihm) {
         this.ihm = ihm;
         this.moteur = new MoteurImpl();
         this.init();
@@ -32,6 +36,9 @@ public class CtrlImp implements Ctrl {
     }
 
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void init() {
         Command marquerMesure = new MarquerMesure(this);
@@ -46,12 +53,18 @@ public class CtrlImp implements Ctrl {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void UpdateTempo(/*Moteur m*/) {
         this.tempo = this.moteur.getTempo();
         this.ihm.texttempo.setText(Integer.toString(this.tempo));
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void UpdateMesure() {
         this.mesure = this.moteur.getMesure();
@@ -69,37 +82,58 @@ public class CtrlImp implements Ctrl {
         System.out.println("marquer mesure");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void IncrMesure() {
         System.out.println(">>>>>>>");this.moteur.incMesure();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void DecMesure() {
         this.moteur.decMesure();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void IncrTempo() {
         System.out.println("---->");
         this.moteur.incTempo();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void DecTempo() {
         this.moteur.decTempo();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void start() {
         this.moteur.play(true);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void stop() {
         this.moteur.play(false);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateCurseur(int v) {
         System.out.println("without if check v= "+v);
@@ -109,6 +143,9 @@ public class CtrlImp implements Ctrl {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setMoteur(Moteur m) {
         this.moteur = m;

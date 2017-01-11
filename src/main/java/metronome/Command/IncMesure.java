@@ -3,7 +3,7 @@ package src.main.java.metronome.Command;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by h-raf on 11/11/16.
+ * Incrementer la valeur de mesure
  */
 public class IncMesure implements Command {
 
@@ -12,16 +12,27 @@ public class IncMesure implements Command {
     public IncMesure() {
     }
 
+    /**
+     * Constructor
+     * @param c
+     */
     public IncMesure(Ctrl c) {
         this.controler = c;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void execute() {
         System.out.println("!!!!!!!");
         this.controler.IncrMesure();
     }
 
+    /**
+     * {@inheritDoc}
+     * @param m
+     */
     @Override
     public void setMoteur(Ctrl m) {
         this.controler = m;

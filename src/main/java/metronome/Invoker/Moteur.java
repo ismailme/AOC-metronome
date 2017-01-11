@@ -1,12 +1,11 @@
 package src.main.java.metronome.Invoker;
 
 import src.main.java.metronome.Command.Command;
-import src.main.java.metronome.Command.UpdatTempo;
 
 
 
 /**
- * 
+ * Moteur
  */
 public interface Moteur {
 
@@ -15,25 +14,6 @@ public interface Moteur {
      */
     public void init();
 
-    /**
-     * @param o
-     */
-    //public void attach(Observer o);
-
-    /**
-     * @param o
-     */
-    //public void detach(Observer o);
-
-
-
-  //  public UpdatTempo getTempo();
-
-    /**
-     * Met a jour le tempo
-     * @param t
-     */
-   // public void setTempo(UpdatTempo t);
 
     /**
      * Retourne le temps par mesure
@@ -104,11 +84,28 @@ public interface Moteur {
      */
     public void decMesure();
 
+    /**
+     * Setter Mesure
+     * @param mesure
+     */
     public void setMesure(int mesure);
 
+    /**
+     * Setter Tempo
+     * @param tempo
+     */
     public void setTempo(int tempo);
 
+    /**
+     * Setter Commande Update Mesure
+     * @param cmd
+     */
     void setCmdUpdateMesure(Command cmd);
+
+    /**
+     * Setter Commande Update Tempo
+     * @param cmd
+     */
     void setCmdUpdateTempo(Command cmd);
 
 

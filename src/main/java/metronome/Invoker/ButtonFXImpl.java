@@ -3,7 +3,7 @@ package src.main.java.metronome.Invoker;
 import src.main.java.metronome.Command.Command;
 
 /**
- * Created by H-raf on 21/11/2016.
+ * Button
  */
 public class ButtonFXImpl implements ButtonFX {
 
@@ -12,6 +12,12 @@ public class ButtonFXImpl implements ButtonFX {
 
     }
 
+    /**
+     *
+     * Set Commande
+     * {@inheritDoc}
+     * @param c
+     */
     @Override
     public void setCmd(Command c) {
         this.cmd = c;

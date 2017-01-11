@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 /**
- * 
+ * Moteur
  */
 public class MoteurImpl implements Moteur,Subject
 {
@@ -34,10 +34,6 @@ public class MoteurImpl implements Moteur,Subject
      */
     private boolean etat;
 
-    /**
-     * La valeur du Tempo
-     */
-//    private UpdatTempo tmp;
 
     /**
      * La valeur du nombre de temps par mesure
@@ -86,6 +82,9 @@ public class MoteurImpl implements Moteur,Subject
         this.init();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void init() {
 
@@ -95,18 +94,30 @@ public class MoteurImpl implements Moteur,Subject
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setCmdUpdateMesure(Command cmd){
         this.updateMesure = cmd;
 
     }
 
+    /**
+     * Set Commande
+     * {@inheritDoc}
+     * @param cmd
+     */
     @Override
     public void setCmdUpdateTempo(Command cmd){
         this.updateTempo = cmd;
 
     }
 
+    /**
+     *
+     * start metronome
+     */
     public void start() {
             new Thread(new Runnable() {
                 public void run() {
@@ -133,6 +144,10 @@ public class MoteurImpl implements Moteur,Subject
             }).start();
     }
 
+    /**
+     * play metronome
+     * @param play
+     */
     public void play(boolean play){
         if(etat == play)
             return;
@@ -142,6 +157,9 @@ public class MoteurImpl implements Moteur,Subject
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void incTempo() {
         this.tempo+=1;
@@ -150,7 +168,9 @@ public class MoteurImpl implements Moteur,Subject
 
     }
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void decTempo() {
         this.tempo-=1;
@@ -159,6 +179,9 @@ public class MoteurImpl implements Moteur,Subject
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void incMesure() {
         this.mesure++;
@@ -168,6 +191,9 @@ public class MoteurImpl implements Moteur,Subject
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void decMesure() {
         this.mesure-=1;
@@ -176,50 +202,52 @@ public class MoteurImpl implements Moteur,Subject
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setCmdMarquerTemps(Command c) {
         this.cmdt = c;
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setCmdMarquerMesure(Command c) {
         this.cmdm = c;
 
     }
 
-
-   /* @Override
-    public UpdatTempo getTempo() {
-        return tmp;
-    }
-
-    @Override
-    public void setTempo(UpdatTempo t) {
-        tmp = t;
-    }
-*/
-
-
+    /**
+     *
+     * @return valeur tempo
+     */
     public int getTempo() {
         return this.tempo;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getMesure() {
         return this.mesure;
     }
 
-  /*  @Override
-    public void setNbrTempo(int n) {
-        tmp.setValTempo(n);
-    }*/
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setEnMarche(boolean m) {
         etat = m;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean getEnMarche() {
         return etat;
@@ -234,6 +262,9 @@ public class MoteurImpl implements Moteur,Subject
         // TODO implement here
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void notifyObservers() {
 
@@ -248,6 +279,9 @@ public class MoteurImpl implements Moteur,Subject
         // TODO implement here
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setMesure(int mesure) {
         if ((mesure <= this.Max_NbMesure )&&( mesure >= this.Min_NbMesure)){
@@ -262,6 +296,10 @@ public class MoteurImpl implements Moteur,Subject
 
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setTempo(int tempo) {
         this.tempo = tempo;

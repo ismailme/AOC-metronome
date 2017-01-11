@@ -3,7 +3,8 @@ package src.main.java.metronome.Command;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by H-raf on 21/11/2016.
+ *
+ * Lancer metronome
  */
 public class StartMetronome implements Command {
 
@@ -13,11 +14,19 @@ public class StartMetronome implements Command {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void execute() {
         this.controler.start();
     }
 
+    /**
+     * Setter Moteur
+     * {@inheritDoc}
+     * @param m
+     */
     @Override
     public void setMoteur(Ctrl m) {
         this.controler = m;

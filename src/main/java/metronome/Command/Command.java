@@ -4,7 +4,7 @@ import src.main.java.metronome.Invoker.Moteur;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by MELLALI on 14/10/2016.
+ * PC Command
  */
 public interface Command {
 
@@ -12,5 +12,10 @@ public interface Command {
      * Execute la commande.
      */
     public void execute();
+
+    /**
+     *
+     * @param m
+     */
     public void setMoteur(Ctrl m);
 }

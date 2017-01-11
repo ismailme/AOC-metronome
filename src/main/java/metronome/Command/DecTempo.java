@@ -3,7 +3,7 @@ package src.main.java.metronome.Command;
 import src.main.java.metronome.Receiver.Ctrl;
 
 /**
- * Created by h-raf on 11/11/16.
+ * Decrementer la valeur de Tempo
  */
 public class DecTempo implements Command {
 
@@ -12,15 +12,25 @@ public class DecTempo implements Command {
     public DecTempo() {
     }
 
+    /**
+     * constructor
+     * @param c
+     */
     public DecTempo(Ctrl c) {
         this.controler = c;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void execute() {
         this.controler.DecTempo();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setMoteur(Ctrl m) {
         this.controler = m;

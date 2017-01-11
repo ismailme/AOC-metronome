@@ -2,7 +2,6 @@ package src.main.java.metronome.IHM;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.AmbientLight;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -22,15 +21,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by H-raf on 17/11/2016.
+ * Ihm
  */
 public class IhmImpl implements Ihm,Initializable {
 
 
     Ctrl ctl;
     @FXML Button incrementerT,decrementerT,incrementerM,decrementerM,startMetro,stopMetro;
-    @FXML
-    Circle ledTemps,ledMesure;
+    @FXML Circle ledTemps,ledMesure;
     @FXML Slider tempo;
     @FXML public TextField textmesure, texttempo;
     Command incrT,decrT,incrM,decrM,start,stop;
@@ -48,6 +46,9 @@ public class IhmImpl implements Ihm,Initializable {
         this.cFX = new CurseurFXImpl();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -66,6 +67,9 @@ public class IhmImpl implements Ihm,Initializable {
         this.start = new StartMetronome();
         this.start.setMoteur(this.ctl);
 
+        this.stop = new StopMetronome();
+        this.stop.setMoteur(this.ctl);
+
 
         this.btn = new ButtonFXImpl();
         this.textmesure.setText("5");
@@ -74,27 +78,32 @@ public class IhmImpl implements Ihm,Initializable {
 
         this.incrementerT.setOnAction((event -> {
             this.btn.setCmd(this.incrT);
-            System.out.println("incrementer Tempo bejeghe");
+            System.out.println("incrementer Tempo ");
         }));
 
         this.decrementerT.setOnAction((event -> {
             this.btn.setCmd(this.decrT);
-            System.out.println("decrementer Tempo bejeghe");
+            System.out.println("decrementer Tempo ");
         }));
 
         this.incrementerM.setOnAction((event -> {
             this.btn.setCmd(this.incrM);
-            System.out.println("incrementer mesure bejeghe");
+            System.out.println("incrementer mesure ");
         }));
 
         this.decrementerM.setOnAction((event -> {
             this.btn.setCmd(this.decrM);
-            System.out.println("decrementer mesure bejeghe");
+            System.out.println("decrementer mesure ");
         }));
 
         this.startMetro.setOnAction((event -> {
             this.btn.setCmd(this.start);
-            System.out.println("start bejeghe");
+            System.out.println("start ");
+        }));
+
+        this.stopMetro.setOnAction((event -> {
+            this.btn.setCmd(this.stop);
+            System.out.println("stop ");
         }));
 
         this.tempo.valueProperty().addListener((observable, oldValue, newValue) ->{
@@ -112,6 +121,9 @@ public class IhmImpl implements Ihm,Initializable {
         SonoLed2.setCycleCount(MediaPlayer.INDEFINITE);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void marquerTemps() {
 
@@ -129,6 +141,10 @@ public class IhmImpl implements Ihm,Initializable {
         SonoLed1.stop();
     }
 
+    /**
+     *
+     * {@inheritDoc}
+     */
     @Override
     public void marquerMesure() {
         ledMesure.setFill(Color.web("#ff1f1f"));
