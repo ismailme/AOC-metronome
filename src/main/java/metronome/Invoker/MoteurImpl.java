@@ -289,14 +289,10 @@ public class MoteurImpl implements Moteur,Subject
      */
     @Override
     public void setMesure(int mesure) {
-      //  if ((mesure <= this.Max_NbMesure )&&( mesure >= this.Min_NbMesure)){
+        if(mesure >= Min_NbMesure && mesure <= Max_NbMesure){
         if(updateMesure != null)
-            //this.mesure = mesure;
-           this.updateMesure.execute();
-       // }
-       // else
-       //     if(mesure > this.Max_NbMesure){ this.mesure=this.Max_NbMesure;}
-       //    else if(mesure < this.Min_NbMesure){ this.mesure=this.Min_NbMesure;}
+           this.updateMesure.execute();}
+
     }
 
 
@@ -305,9 +301,11 @@ public class MoteurImpl implements Moteur,Subject
      */
     @Override
     public void setTempo(int tempo) {
+
+        if(tempo >= mintempo && tempo <= maxtempo){
         this.tempo = tempo;
         if(this.updateTempo != null){
-        this.updateTempo.execute();}
+        this.updateTempo.execute();}}
         System.out.println("Tempo updated to "+this.tempo);
 
    }

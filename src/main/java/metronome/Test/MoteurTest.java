@@ -23,6 +23,7 @@ public class MoteurTest {
         moteur = new MoteurImpl();
 
 
+
     }
 
     @Test
@@ -49,12 +50,16 @@ public class MoteurTest {
 
     @Test
     public void setEnMarche() throws Exception {
-        assertEquals();
+        this.moteur.setEnMarche(false);
+        assertFalse("setEnMarche(): valeur en marche erreur assert 1",this.moteur.getEnMarche());
+        this.moteur.setEnMarche(true);
+        assertTrue("setEnMarche(): valeur en marche erreur assert 1",this.moteur.getEnMarche());
+
     }
 
     @Test
     public void getEnMarche() throws Exception {
-
+        assertFalse(" getEnMarche() : valeur en marche erreur assert 1",this.moteur.getEnMarche());
     }
 
     @Test
@@ -79,6 +84,24 @@ public class MoteurTest {
 
     @Test
     public void decTempo() throws Exception {
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        assertEquals("decTempo(): val tempo erroné assert1",this.moteur.getTempo(),108);
+
+        this.moteur.setTempo(305);
+        assertEquals("decTempo(): val tempo erroné assert2",this.moteur.getTempo(),108);
+
+
 
     }
 
