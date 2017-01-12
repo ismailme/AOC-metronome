@@ -289,7 +289,9 @@ public class MoteurImpl implements Moteur,Subject
      */
     @Override
     public void setMesure(int mesure) {
+        System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm "+this.getMesure());
         if(mesure >= Min_NbMesure && mesure <= Max_NbMesure){
+            this.mesure = mesure;
         if(updateMesure != null)
            this.updateMesure.execute();}
 
