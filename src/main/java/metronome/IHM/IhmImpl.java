@@ -158,4 +158,12 @@ public class IhmImpl implements Ihm,Initializable {
         SonoLed2.stop();
 
     }
+
+    public Ctrl getCtl() {
+        return ctl;
+    }
+
+    public void setCtl(Ctrl ctl) {
+        this.ctl = ctl;
+    }
 }

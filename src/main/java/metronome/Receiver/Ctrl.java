@@ -73,5 +73,11 @@ public interface Ctrl {
      */
     public void setMoteur(Moteur m);
 
+    /**
+     * Renvoie le moteur
+     * @return
+     */
+    public Moteur getMoteur();
+
 
 }

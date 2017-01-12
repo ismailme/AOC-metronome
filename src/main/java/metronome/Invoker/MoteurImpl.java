@@ -184,8 +184,10 @@ public class MoteurImpl implements Moteur,Subject
      */
     @Override
     public void incMesure() {
-        this.mesure++;
-        setMesure(this.mesure);
+        if(this.mesure+1 <= this.Max_NbMesure) {
+            this.mesure += 1;
+            setMesure(this.mesure);
+        }
         System.out.println("mesure "+this.getMesure());
         //this.updateMesure.execute();
 
@@ -196,8 +198,11 @@ public class MoteurImpl implements Moteur,Subject
      */
     @Override
     public void decMesure() {
-        this.mesure-=1;
-        setMesure(this.mesure);
+
+        if(this.mesure-1 >= this.Min_NbMesure) {
+            this.mesure -= 1;
+            setMesure(this.mesure);
+        }
         System.out.println("mesure "+this.getMesure());
 
     }
@@ -284,16 +289,14 @@ public class MoteurImpl implements Moteur,Subject
      */
     @Override
     public void setMesure(int mesure) {
-        if ((mesure <= this.Max_NbMesure )&&( mesure >= this.Min_NbMesure)){
-            this.mesure = mesure;
-            this.updateMesure.execute();
-        }
-        else
-            if(mesure > this.Max_NbMesure){ this.mesure=this.Max_NbMesure;}
-           else if(mesure < this.Min_NbMesure){ this.mesure=this.Min_NbMesure;}
-
-
-
+      //  if ((mesure <= this.Max_NbMesure )&&( mesure >= this.Min_NbMesure)){
+        if(updateMesure != null)
+            //this.mesure = mesure;
+           this.updateMesure.execute();
+       // }
+       // else
+       //     if(mesure > this.Max_NbMesure){ this.mesure=this.Max_NbMesure;}
+       //    else if(mesure < this.Min_NbMesure){ this.mesure=this.Min_NbMesure;}
     }
 
 

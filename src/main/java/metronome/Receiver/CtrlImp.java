@@ -21,7 +21,8 @@ public class CtrlImp implements Ctrl {
      * Default constructor
      */
     public CtrlImp(){
-
+        this.moteur = new MoteurImpl();
+        this.init();
     }
 
     /**
@@ -150,6 +151,10 @@ public class CtrlImp implements Ctrl {
     public void setMoteur(Moteur m) {
         this.moteur = m;
     }
+
+    @Override
+    public Moteur getMoteur() {  return this.moteur; }
+
 
 
 }
