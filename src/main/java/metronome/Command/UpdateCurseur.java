@@ -30,7 +30,6 @@ public class UpdateCurseur implements Command {
      */
     @Override
     public void execute() {
-        System.out.println("Update Curszur  check");
         this.c.updateCurseur(this.getVal());
 
     }

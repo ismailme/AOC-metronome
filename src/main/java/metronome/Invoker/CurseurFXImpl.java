@@ -20,7 +20,6 @@ public class CurseurFXImpl implements CurseurFX {
      */
     @Override
     public void setCmd(Command c) {
-        System.out.println("curseur FX check");
         this.command = c;
         this.command.execute();
     }
