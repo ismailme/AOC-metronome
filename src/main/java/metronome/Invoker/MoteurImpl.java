@@ -126,7 +126,6 @@ public class MoteurImpl implements Moteur,Subject
                             if (count % MoteurImpl.this.mesure != 0) {
 
                                 cmdm.execute();
-                                System.out.println("2");
                                 count++;
                             } else {
 
@@ -164,7 +163,6 @@ public class MoteurImpl implements Moteur,Subject
     public void incTempo() {
         this.tempo+=1;
         setTempo(this.tempo);
-        System.out.println("tempooo "+this.getTempo());
 
     }
 
@@ -175,7 +173,6 @@ public class MoteurImpl implements Moteur,Subject
     public void decTempo() {
         this.tempo-=1;
         setTempo(this.tempo);
-        System.out.println("tempooo "+this.getTempo());
 
     }
 
@@ -188,7 +185,6 @@ public class MoteurImpl implements Moteur,Subject
             this.mesure += 1;
             setMesure(this.mesure);
         }
-        System.out.println("mesure "+this.getMesure());
         //this.updateMesure.execute();
 
     }
@@ -203,7 +199,6 @@ public class MoteurImpl implements Moteur,Subject
             this.mesure -= 1;
             setMesure(this.mesure);
         }
-        System.out.println("mesure "+this.getMesure());
 
     }
 
@@ -289,7 +284,6 @@ public class MoteurImpl implements Moteur,Subject
      */
     @Override
     public void setMesure(int mesure) {
-        System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm "+this.getMesure());
         if(mesure >= Min_NbMesure && mesure <= Max_NbMesure){
             this.mesure = mesure;
         if(updateMesure != null)
@@ -308,7 +302,6 @@ public class MoteurImpl implements Moteur,Subject
         this.tempo = tempo;
         if(this.updateTempo != null){
         this.updateTempo.execute();}}
-        System.out.println("Tempo updated to "+this.tempo);
 
    }
 }
