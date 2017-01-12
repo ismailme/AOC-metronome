@@ -1,7 +1,6 @@
 package src.main.java.metronome.Receiver;
 
 import src.main.java.metronome.Command.*;
-import src.main.java.metronome.IHM.Ihm;
 import src.main.java.metronome.IHM.IhmImpl;
 import src.main.java.metronome.Invoker.Moteur;
 import src.main.java.metronome.Invoker.MoteurImpl;
