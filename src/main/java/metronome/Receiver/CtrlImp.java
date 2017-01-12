@@ -60,7 +60,7 @@ public class CtrlImp implements Ctrl {
     @Override
     public void UpdateTempo(/*Moteur m*/) {
         this.tempo = this.moteur.getTempo();
-        if(ihm.texttempo!=null){
+        if(ihm!=null){
         this.ihm.texttempo.setText(Integer.toString(this.tempo));}
     }
 
@@ -71,16 +71,19 @@ public class CtrlImp implements Ctrl {
     public void UpdateMesure() {
         this.mesure = this.moteur.getMesure();
         System.out.println("-> "+this.mesure);
-        this.ihm.textmesure.setText(Integer.toString(this.mesure));
+        if(ihm!=null){
+        this.ihm.textmesure.setText(Integer.toString(this.mesure));}
     }
 
     public void marquerTemps() {
-        this.ihm.marquerTemps();
+        if(ihm!=null){
+        this.ihm.marquerTemps();}
         System.out.println("marquer temps");
     }
 
     public void marquerMesure() {
-        this.ihm.marquerMesure();
+        if(ihm!=null){
+        this.ihm.marquerMesure();}
         System.out.println("marquer mesure");
     }
 

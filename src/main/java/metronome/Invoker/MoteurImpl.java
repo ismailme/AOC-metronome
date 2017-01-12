@@ -306,16 +306,9 @@ public class MoteurImpl implements Moteur,Subject
     @Override
     public void setTempo(int tempo) {
         this.tempo = tempo;
-        this.updateTempo.execute();
+        if(this.updateTempo != null){
+        this.updateTempo.execute();}
         System.out.println("Tempo updated to "+this.tempo);
-//    if ((tempo <= this.maxtempo) && (tempo >= this.mintempo)){
-//        this.tempo = tempo;
-//        this.updateTempo.execute();
-//        System.out.println("Tempo updated to "+this.tempo);
-//    }
-//    else
-//        if(tempo > this.maxtempo){ this.tempo = this.maxtempo;}
-//        else if (tempo < this.mintempo){this.tempo = this.mintempo;}
-//
+
    }
 }

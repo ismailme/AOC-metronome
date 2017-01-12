@@ -16,11 +16,11 @@ import static org.junit.Assert.*;
  */
 public class MoteurTest {
 
-    IhmImpl ihm;
+    MoteurImpl moteur;
 
     @Before
     public void setUp() throws Exception {
-        ihm = new IhmImpl();
+        moteur = new MoteurImpl();
 
 
     }
@@ -32,25 +32,24 @@ public class MoteurTest {
 
     @Test
     public void getTempo() throws Exception {
-        assertEquals("valeur tempo non equal assert1",this.ihm.getCtl().getMoteur().getTempo(),120);
-        this.ihm.getCtl().getMoteur().decTempo();
-        this.ihm.getCtl().getMoteur().decTempo();
-        assertEquals("valeur tempo non equal assert2",this.ihm.getCtl().getMoteur().getTempo(),118);
+        assertEquals("valeur tempo non equal assert1",this.moteur.getTempo(),120);
+        this.moteur.decTempo();
+        this.moteur.decTempo();
+        assertEquals("valeur tempo non equal assert2",this.moteur.getTempo(),118);
     }
 
     @Test
     public void getMesure() throws Exception {
-        /*Command c = new UpdateMesure();
-        this.moteur.setCmdUpdateMesure(c);
-        assertEquals("valeur mesure non equal assert1",this.moteur.getMesure(),5);
+
+       assertEquals("valeur mesure non equal assert1",this.moteur.getMesure(),5);
         this.moteur.incMesure();
         this.moteur.incMesure();
-        assertEquals("valeur mesure non equal assert2",this.moteur.getMesure(),7);*/
+        assertEquals("valeur mesure non equal assert2",this.moteur.getMesure(),7);
     }
 
     @Test
     public void setEnMarche() throws Exception {
-
+        assertEquals();
     }
 
     @Test
