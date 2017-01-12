@@ -60,7 +60,8 @@ public class CtrlImp implements Ctrl {
     @Override
     public void UpdateTempo(/*Moteur m*/) {
         this.tempo = this.moteur.getTempo();
-        this.ihm.texttempo.setText(Integer.toString(this.tempo));
+        if(ihm.texttempo!=null){
+        this.ihm.texttempo.setText(Integer.toString(this.tempo));}
     }
 
     /**

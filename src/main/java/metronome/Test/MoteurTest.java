@@ -35,7 +35,7 @@ public class MoteurTest {
         assertEquals("valeur tempo non equal assert1",this.ihm.getCtl().getMoteur().getTempo(),120);
         this.ihm.getCtl().getMoteur().decTempo();
         this.ihm.getCtl().getMoteur().decTempo();
-        assertEquals("valeur tempo non equal assert2",this.ihm.getCtl().getMoteur().getTempo(),122);
+        assertEquals("valeur tempo non equal assert2",this.ihm.getCtl().getMoteur().getTempo(),118);
     }
 
     @Test
