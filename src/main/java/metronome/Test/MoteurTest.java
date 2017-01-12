@@ -11,9 +11,7 @@ import src.main.java.metronome.Receiver.CtrlImp;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by H-raf on 12/01/2017.
- */
+
 public class MoteurTest {
 
     MoteurImpl moteur;

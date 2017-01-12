@@ -25,7 +25,6 @@ public class MainApp extends Application{
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        System.out.println("staraaaaaart");
         Parent root = FXMLLoader.load(getClass().getResource("../sample.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("métronome V1");

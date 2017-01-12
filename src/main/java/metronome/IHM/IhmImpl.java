@@ -78,37 +78,30 @@ public class IhmImpl implements Ihm,Initializable {
 
         this.incrementerT.setOnAction((event -> {
             this.btn.setCmd(this.incrT);
-            System.out.println("incrementer Tempo ");
         }));
 
         this.decrementerT.setOnAction((event -> {
             this.btn.setCmd(this.decrT);
-            System.out.println("decrementer Tempo ");
         }));
 
         this.incrementerM.setOnAction((event -> {
             this.btn.setCmd(this.incrM);
-            System.out.println("incrementer mesure ");
         }));
 
         this.decrementerM.setOnAction((event -> {
             this.btn.setCmd(this.decrM);
-            System.out.println("decrementer mesure ");
         }));
 
         this.startMetro.setOnAction((event -> {
             this.btn.setCmd(this.start);
-            System.out.println("start ");
         }));
 
         this.stopMetro.setOnAction((event -> {
             this.btn.setCmd(this.stop);
-            System.out.println("stop ");
         }));
 
         this.tempo.valueProperty().addListener((observable, oldValue, newValue) ->{
             this.cFX.setCmd(new UpdateCurseur(newValue.intValue(),this.ctl));
-            System.out.println("new valuuue "+newValue.intValue());
 
         });
 

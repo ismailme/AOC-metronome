@@ -6,9 +6,7 @@ import src.main.java.metronome.Receiver.CtrlImp;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by MELLALI on 12/01/2017.
- */
+
 public class CtrlImpTest {
     CtrlImp ctrl;
 
