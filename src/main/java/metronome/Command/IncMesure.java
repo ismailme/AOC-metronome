@@ -25,7 +25,6 @@ public class IncMesure implements Command {
      */
     @Override
     public void execute() {
-        System.out.println("!!!!!!!");
         this.controler.IncrMesure();
     }
 
